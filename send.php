@@ -6,6 +6,7 @@ require 'phpmailer/Exception.php';
 
 // Переменные, которые отправляет пользователь
 $name = $_POST['name'];
+$email = $_POST['email'];
 $phone = $_POST['phone'];
 $message = $_POST['message'];
 
@@ -13,7 +14,8 @@ $message = $_POST['message'];
 $title = "Новое обращение Best Tour plan";
 $body = "
 <h2>Новое обращение</h2>
-<b>Имя:</b> $name<br>
+<b>Имя:</b> $name<br><br>
+<b>Электронная почта:</b> $email<br><br>
 <b>Телефон:</b> $phone<br><br>
 <b>Сообщение:</b><br>$message
 ";

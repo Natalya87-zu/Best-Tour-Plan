@@ -53,6 +53,7 @@ $(document).ready(function () {
   $(".form").each(function () {
     $(this).validate({
       errorClass: "invalid",
+      rules: { phone: { required: true, minlength: 18 } },
       messages: {
         name: {
           required: "Enter your name!",
@@ -63,8 +64,9 @@ $(document).ready(function () {
           email: "Enter correct email address",
         },
         phone: {
+          rules: { phone: { required: true, minlength: 18 } },
           required: "Enter your phone number!",
-          minlength: "Enter correct phone number",
+          minlength: jQuery.validator.format("Enter correct phone number"),
         },
       },
     });
@@ -82,11 +84,11 @@ $(document).ready(function () {
 
   $(function () {
     //2. Получить элемент, к которому необходимо добавить маску
-    $(".phone").mask("+7(999) 999-9999");
+    $(".phone").mask("+7 (000)000-0000");
   });
   $(function () {
     //2. Получить элемент, к которому необходимо добавить маску
-    $(".phone1").mask("+7(999) 999-9999");
+    $(".phone1").mask("+7(000) 000-0000");
   });
   AOS.init();
 });
